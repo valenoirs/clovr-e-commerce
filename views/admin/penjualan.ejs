@@ -1,0 +1,35 @@
+<div class="row justify-content-between mt-4">
+    <div class="col">
+        <h3>Data Pelanggan</h3>
+    </div>
+</div>
+<hr>
+<div class="row justify-content-center mt-4" style="overflow: auto;height: 350px;">
+  <table class="table">
+    <thead class="table-secondary text-center">
+          <tr>
+            <th scope="col">#</th>
+            <!-- <th scope="col">Menu</th> -->
+            <th scope="col">Nama</th>
+            <th scope="col">Produk</th>
+            <th scope="col">Total Bayar</th>
+            <th scope="col">Bukti Pembayaran</th>
+          </tr>
+        </thead>
+        <tbody class="align-middle text-center">
+            <% data.forEach((data, i) => { %>
+                <tr>
+                  <th scope="row"><%= i+1 %></th>
+                  <td><%= data.nama_pelanggan %></td>
+                  <td><% data.produk.forEach(item => { %>
+                    <%= item.jumlah %>x <%= item.produk %><br>
+                  <% }) %></td>
+                  <td><%= data.total %></td>
+                  <td>
+                      <a href="/admin/penjualan/<%= data.penjualanId %>" class="btn btn-secondary">Bukti Pembayaran</a>
+                  </td>
+                </tr>
+            <% }) %>
+          </tbody>
+      </table>
+</div>

@@ -1,0 +1,46 @@
+<div class="row mt-4">
+  <div class="col-2">
+    <h3>Data Produk</h3>
+  </div>
+  <div class="col text-start">
+    <a href="/admin/produk/tambah" class="btn btn-success">+</a>
+  </div>
+</div>
+<hr>
+<div class="row justify-content-center mt-4">
+    <!-- <div class="col">
+      <a href="/admin/produk/tambah" class="btn btn-success">Produk +</a>
+    </div>
+    <div class="col">
+      <p class="d-inline">Filter : </p>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" checked>
+        <label class="form-check-label" for="inlineCheckbox1">T-Shirt</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2" checked>
+        <label class="form-check-label" for="inlineCheckbox2">Sweater</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" checked>
+        <label class="form-check-label" for="inlineCheckbox3">Kemeja</label>
+      </div>
+    </div> -->
+</div>
+<div class="row justify-content-start mt-4 mb-5">
+  <% data.forEach(produk => { %>
+    <div class="col-3 mb-4">
+      <div class="card" style="width: 16rem;">
+        <img src="<%= produk.gambar %>" class="card-img-top" alt="produk.img" style="height: 250px;">
+        <div class="card-body">
+          <h6 class="card-title"><%= produk.nama %></h6>
+          <h7 class="card-subtitle mb-2 text-muted"><%= produk.kategori %></h7>
+          <p class="card-text">Rp. <%= produk.harga.toLocaleString() %></p>
+          <form action="/admin/produk/<%= produk.produkId %>?_method=DELETE" method="POST">
+            <button type="submit" class="btn btn-outline-danger" onclick="return confirm('Anda yakin?')">Hapus Produk</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  <% }) %>
+</div>

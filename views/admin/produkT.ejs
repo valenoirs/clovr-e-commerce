@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row mt-5 mb-5 justify-content-center" style="opacity: 0.8;">
+        <div class="col-5">
+            <form method="POST" action="/admin/produk" enctype="multipart/form-data">
+                <h4 class="text-center text-secondary">PRODUK</h4>
+                <label for="nama" class="form-label">Nama</label>
+                <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Nama" id="nama" name="nama" required>
+                </div>
+                <label for="kategori" class="form-label">Kategori</label>
+                <div class="mb-3">
+                    <select class="form-select mb-3" id="kategori" name="kategori">
+                        <option value="Kemeja">Kemeja</option>
+                        <option value="Sweater">Sweater</option>
+                        <option value="T-Shirt">T-Shirt</option>
+                    </select>
+                </div>
+                <label for="harga" class="form-label">Harga</label>
+                <div class="mb-3">
+                    <input type="number" class="form-control" placeholder="Rp." id="harga" name="harga" required>
+                </div>
+                <div class="mb-3 mt-4">
+                    <input type="file" class="form-control" id="gambar" name="gambar" required>
+                </div>
+                <div class="mb-3 text-center">
+                    <button type="submit" class="btn btn-secondary">Tambah</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

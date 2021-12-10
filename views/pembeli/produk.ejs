@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="row mt-5 mb-5">
+        <div class="col-1"></div>
+        <div class="col-5">
+            <div class="card" style="width: 25rem;">
+                <% if (produk.gambar) { %>
+                    <img src="<%= produk.gambar %>" class="card-img-top" alt="produk.img" style="height: 400px;">
+                <% } %>
+            </div>
+        </div>
+        <div class="col">
+            <form method="POST" action="/keranjang">
+                <div class="mb-5">
+                    <h2><%= produk.nama %></h2>
+                    <p class="text-secondary">Kategori : <%= produk.kategori %></p>
+                    <h5>Rp. <%= produk.harga.toLocaleString() %></h5>
+                </div>
+                <div class="mb-5">
+                    <h6 class="d-inline">Kuantitas : &emsp;</h6>
+                    <!-- <button type="button" id="decreaseButton" onclick="decreaseValue()" class="btn btn-secondary" style="width: 35px; height: 35px;">-</button> -->
+                    <input type="number" id="produkValue" class="form-control d-inline" name="jumlah" style="width: 75px;" value="1">
+                    <!-- <h5 class="d-inline" id="jumlahBeli">&emsp; 1 &emsp;</h5> -->
+                    <!-- <button type="button" id="increaseButton" onclick="increaseValue()" class="btn btn-outline-success" style="width: 35px; height: 35px;">+</button> -->
+                </div>
+                <div class="mb-5">
+                    <h6 class="d-inline">Ukuran : &emsp;&emsp;</h6>
+                    <select class="form-select d-inline" style="width: 75px;" id="ukuran" name="ukuran">
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <input type="hidden" name="produkId" value="<%= produk.produkId %>">
+                    <input type="hidden" name="produk" value="<%= produk.nama %>">
+                    <input type="hidden" name="harga" value="<%= produk.harga %>">
+                    <input type="hidden" name="kategori" value="<%= produk.kategori %>">
+                    <input type="hidden" name="gambar" value="<%= produk.gambar %>">
+                    <div class="col-5 mb-5">
+                        <button type="submit" class="btn btn-success" style="width: 200px;"><i class="bi bi-cart-plus"></i> Masukkan Keranjang</button>
+                    </div>
+                    <!-- <div class="col-5 mb-5">
+                        <button type="submit" class="btn btn-success" style="width: 200px;">Beli Sekarang</button>
+                    </div> -->
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

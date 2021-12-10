@@ -1,0 +1,29 @@
+<div class="row justify-content-between mt-4">
+    <div class="col">
+        <h3>Data Pelanggan</h3>
+    </div>
+</div>
+<hr>
+<div class="row justify-content-center mt-4" style="overflow: auto;height: 350px;">
+  <table class="table">
+    <thead class="table-secondary text-center">
+          <tr>
+            <th scope="col">#</th>
+            <!-- <th scope="col">Menu</th> -->
+            <th scope="col">Nama</th>
+            <th scope="col">Alamat</th>
+            <th scope="col">No. Hp</th>
+          </tr>
+        </thead>
+        <tbody class="align-middle text-center">
+            <% data.forEach((pelanggan, i) => { %>
+                <tr>
+                  <th scope="row"><%= i+1 %></th>
+                  <td><%= pelanggan.nama %></td>
+                  <td><%= pelanggan.alamat %></td>
+                  <td><%= pelanggan.no_hp %></td>
+                </tr>
+            <% }) %>
+          </tbody>
+      </table>
+</div>
